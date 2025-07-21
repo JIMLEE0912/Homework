@@ -10,14 +10,13 @@
 ## 解題策略
 **遞迴版本**
 1. 根據 Ackermann 函數的數學定義實作三種遞迴情況：  
-   $$
-   A(m, n) =
-   \begin{cases}
-   n+1 & \text{if } m = 0 \\
-   A(m-1, 1) & \text{if } m > 0 \text{ and } n = 0 \\
-   A(m-1, A(m, n-1)) & \text{if } m > 0 \text{ and } n > 0
-   \end{cases}
-   $$
+ $$
+A(m,n) = \begin{cases}
+n + 1 & \text{if } m = 0 \\
+A(m-1, 1) & \text{if } n = 0 \\
+A(m-1, A(m, n-1)) & \text{otherwise}
+\end{cases}
+$$
 2. 將三種情況分別實作為：
 
     終止條件：if (m == 0) return n + 1;
